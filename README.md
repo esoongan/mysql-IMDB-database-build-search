@@ -21,19 +21,20 @@ https://www.imdb.com/interfaces/
 
 ## 상세내용
 
-- **E-R 모델링**
-    - Strong Entity, Weak Entity추출
-    - PK역할을 할 식별자 추출
+### **E-R 모델링**
+   - Strong Entity, Weak Entity추출
+   - PK역할을 할 식별자 추출
 
-- **ER to RDB**
-    - Multivalue attribute를 독립적인 엔티티로 재추출하여 외래키로 테이블 관계 재설정
-    - **ERD** 
+### **ER to RDB**
+   - Multivalue attribute를 독립적인 엔티티로 재추출하여 외래키로 테이블 관계 재설정
+   - **ERD** 
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1d20ce79-c82d-431a-b07d-0715db64b6e2/_2021-07-07__9.01.01.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1d20ce79-c82d-431a-b07d-0715db64b6e2/_2021-07-07__9.01.01.png)
+       <img width="1179" alt="erd" src="https://user-images.githubusercontent.com/68773492/124757868-fd0ccf00-df68-11eb-8d8a-c59abebd4437.png">
 
-- **성능최적화**
-    - **서브쿼리**를 사용하여 검색속도 향상
-        - Dram장르의 영상물을 리뷰많은순 검색
+
+### **성능최적화**
+   - **서브쿼리**를 사용하여 검색속도 향상
+       - Dram장르의 영상물을 리뷰많은순 검색
 
         ```sql
         **// 기존 SQL** 
@@ -77,9 +78,9 @@ https://www.imdb.com/interfaces/
         WHERE  c.tconst = d.tconst
         ```
 
-    - **인덱스**를 적절하게 사용하여 검색속도를 높임
+   - **인덱스**를 적절하게 사용하여 검색속도를 높임
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/053e3fc5-d0a7-432c-bc5d-10390a7bf2a3/_2021-07-07__9.06.59.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/053e3fc5-d0a7-432c-bc5d-10390a7bf2a3/_2021-07-07__9.06.59.png)
+        <img width="520" alt="index" src="https://user-images.githubusercontent.com/68773492/124758264-5b39b200-df69-11eb-9e17-bf1bcf906080.png">
 
 
 
